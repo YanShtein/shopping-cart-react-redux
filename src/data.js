@@ -5,7 +5,6 @@ let data = [
     name: 'Cam 90D DSLR Camera with 18-135mm Lens',
     img: '15001.jpg',
     price: 299.99,
-    quantity: 1,
   },
   {
     id: 15002,
@@ -13,7 +12,6 @@ let data = [
     name: 'Lap L13 Yoga 13.3" in Grey',
     img: '15002.jpg',
     price: 1299.99,
-    quantity: 1,
   },
   {
     id: 15003,
@@ -21,7 +19,6 @@ let data = [
     name: 'Phone Pro 13 128GB 8GB RAM',
     img: '15003.jpg',
     price: 1550.99,
-    quantity: 1,
   },
   {
     id: 15004,
@@ -29,7 +26,6 @@ let data = [
     name: 'Computer keyboard X5 Performance USB plug',
     img: '15004.jpg',
     price: 1299.99,
-    quantity: 1,
   },
   {
     id: 15005,
@@ -37,7 +33,6 @@ let data = [
     name: 'Laptop 15.6" in White',
     img: '15005.jpg',
     price: 799.99,
-    quantity: 1,
   },
   {
     id: 15006,
@@ -45,7 +40,6 @@ let data = [
     name: 'Tab iPad Air 2 64 GB',
     img: '15006.jpg',
     price: 159.99,
-    quantity: 1,
   },
   {
     id: 15007,
@@ -53,7 +47,6 @@ let data = [
     name: 'Cam 1070D Camera with 18-50mm Lens',
     img: '15007.jpg',
     price: 425.99,
-    quantity: 1,
   },
   {
     id: 15008,
@@ -61,7 +54,6 @@ let data = [
     name: 'Tab L15 Prism 13.3" in Black',
     img: '15008.jpg',
     price: 239.99,
-    quantity: 1,
   },
   {
     id: 15009,
@@ -69,7 +61,6 @@ let data = [
     name: 'Gaming Prism II Gaming PC 11900K',
     img: '15009.jpg',
     price: 2399.99,
-    quantity: 1,
   },
   {
     id: 15010,
@@ -77,7 +68,6 @@ let data = [
     name: 'EOS 90D Camera with 18-135mm Lens',
     img: '15010.jpg',
     price: 1599.99,
-    quantity: 1,
   },
   {
     id: 15011,
@@ -85,7 +75,6 @@ let data = [
     name: 'Camera HF G50 4K Premium Camcorder',
     img: '15011.jpg',
     price: 10994.99,
-    quantity: 1,
   },
   {
     id: 15012,
@@ -93,7 +82,6 @@ let data = [
     name: 'Gaming mouse 23D with leds',
     img: '15012.jpg',
     price: 99.99,
-    quantity: 1,
   },
   {
     id: 15013,
@@ -101,7 +89,6 @@ let data = [
     name: 'Laptop R1 15.6" FHD Gaming Laptop',
     img: '15013.jpg',
     price: 1599.99,
-    quantity: 1,
   },
   {
     id: 15014,
@@ -109,7 +96,6 @@ let data = [
     name: 'Cam 15D DSLR Camera with 18-400mm Lens',
     img: '15014.jpg',
     price: 169.99,
-    quantity: 1,
   },
   {
     id: 15015,
@@ -117,7 +103,6 @@ let data = [
     name: 'Tab L25 Any 10.3" in Pink',
     img: '15015.jpg',
     price: 199.99,
-    quantity: 1,
   },
   {
     id: 15016,
@@ -125,7 +110,6 @@ let data = [
     name: 'Laptop Pro 13.3" Laptop 10S chip',
     img: '15016.jpg',
     price: 1499.99,
-    quantity: 1,
   },
   {
     id: 15017,
@@ -133,7 +117,6 @@ let data = [
     name: 'Camera D880 DSLR 4K Video Camera with 24-120mm Lens',
     img: '15017.jpg',
     price: 2799.99,
-    quantity: 1,
   },
   {
     id: 15018,
@@ -141,7 +124,6 @@ let data = [
     name: 'G380 LIGHTSYNC Wired Optical Gaming Mouse',
     img: '15018.jpg',
     price: 39.99,
-    quantity: 1,
   },
   {
     id: 15019,
@@ -149,7 +131,6 @@ let data = [
     name: 'Phone Pro 15 256GB 6GB RAM',
     img: '15019.jpg',
     price: 179.99,
-    quantity: 1,
   },
   {
     id: 15020,
@@ -157,7 +138,6 @@ let data = [
     name: 'Desktop screen FLex 60" LCD Monitor',
     img: '15020.jpg',
     price: 69.99,
-    quantity: 1,
   },
   {
     id: 15021,
@@ -165,7 +145,6 @@ let data = [
     name: 'PC Gamer Xtreme Gaming Desktop Core s7-1200F',
     img: '15021.jpg',
     price: 1499.99,
-    quantity: 1,
   },
   {
     id: 15022,
@@ -173,7 +152,6 @@ let data = [
     name: 'Cam 30D DSLR Camera with 18-135mm Lens',
     img: '15022.jpg',
     price: 149.99,
-    quantity: 1,
   },
   {
     id: 15023,
@@ -181,7 +159,6 @@ let data = [
     name: 'Tab L15 Yoga 15.5" in White Small',
     img: '15023.jpg',
     price: 299.99,
-    quantity: 1,
   },
   {
     id: 15024,
@@ -189,7 +166,6 @@ let data = [
     name: 'Desktop screen Brilliance 48.8 LCD Curved Monitor',
     img: '15024.jpg',
     price: 1399.99,
-    quantity: 1,
   },
 ];
 
