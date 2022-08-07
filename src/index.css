@@ -65,12 +65,12 @@ body {
   position: relative;
 }
 
-.cart-btn svg {
-  fill: rgba(0, 0, 0, 0.477);
+.cart-btn img {
+  fill: grey;
 }
 
-.cart-btn svg:hover {
-  fill: black;
+.cart-btn img:hover {
+  color: black;
 }
 
 .itemAdded {
