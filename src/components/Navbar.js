@@ -1,6 +1,6 @@
 import bag from '../svg/bag.svg';
 
-const Header = (props) => {
+const Navbar = (props) => {
   let ItemsInCart = props.cart.map(item => item.quantity).reduce((a, b) => a + b, 0);
   return (
     <div className='header'>
@@ -16,4 +16,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default Navbar;

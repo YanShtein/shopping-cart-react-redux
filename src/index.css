@@ -132,15 +132,15 @@ body {
   margin-bottom: 10px;
 }
 
-.modal-close svg {
+.modal-close img {
   cursor: pointer;
-  font-size: 25px;
   margin-right: 6px;
   height: 40px;
   width: 40px;
+  vertical-align: middle;
 }
 
-.modal-close svg:active {
+.modal-close img:active {
   transform: scale(0.9);
 }
 
