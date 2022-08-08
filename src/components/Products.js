@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from "react-redux";
 import { addToCart } from "../redux/Shopping/actions";
 
@@ -36,7 +37,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id))
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

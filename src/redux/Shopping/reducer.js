@@ -26,7 +26,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           : [...state.cart, {...item, quantity: 1}],
       };
     case actionTypes.REMOVE_FROM_CART:
-      return {}
+      return {};
     default:
       return state;
   }

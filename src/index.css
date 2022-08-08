@@ -28,6 +28,11 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   display: flex;
   justify-content: space-evenly;
@@ -44,6 +49,7 @@ body {
 }
 
 .logo {
+  cursor: pointer;
   font-family: 'Dancing Script', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25px;
   border-bottom: var(--grey-border);
@@ -289,6 +295,7 @@ body {
 }
 
 .footer {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
