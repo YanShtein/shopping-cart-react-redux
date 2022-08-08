@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { addToCart } from "../redux/Shopping/actions";
 import Navbar from './Navbar';
-// import emptyIcon from '../svg/trash.svg';
-// import closeIcon from '../svg/x.svg';
+import emptyIcon from '../svg/trash.svg';
 
-const Cart = () => {
-  // let cartState = props.cart;
+const Cart = ({ cart, addToCart }) => {
   // let total = cartState.map(item => item.price * item.quantity).reduce((a, b) => a + b, 0).toFixed(2);
   // let empty = cartState.length === 0 ? 'Cart is empty...' : 'Shopping Cart';
   
@@ -15,51 +13,52 @@ const Cart = () => {
       {/* NavBar here istead of Outlet in App and change between cart and app,
       I want App to render in / with navBar, couldnt solve it for now. */}
       <Navbar />
-      <div className='main'>
-        <h1>Cart products: </h1>
-        <Link to="/">Back</Link>
+      <div className='cart-body'>
+        <div className='cart-content'>
+          <div className='cart-header'>Shopping cart</div>
+            {
+              cart.map((item) => 
+              <div className='cart-product' key={item.id}>
+                <div className='cart-product_img'>
+                  <img src={require(`../images/${item.img}`)} alt={item.name}/>
+                </div>
+                <div className='cart-product_info'>
+                  <span>{item.name}</span>
+                  <span className='cart-product_price'>$ {item.price}</span>
+                </div>
+                <div className='cart-qty'>
+                  <button type='button' value={item.id} onClick={() => addToCart(item.id)}>+</button>
+                  <span>{item.quantity}</span>
+                  <button type='button' value={item.id} onClick={() => addToCart(item.id)}>-</button>
+                </div>
+              </div>
+            )}
+            <div className='cart-footer'>
+            <div className='empty-cart' title='Empty cart'>
+              {/* empty cart here */}
+              <img src={emptyIcon} alt=""/>
+            </div>
+            <div className='cart-checkout'>
+              <span>Checkout</span>
+              <span>$ {}</span>
+            </div>
+          </div>
+        </div>
       </div>
-      
     </div>
-    
-    // <div className='modal' style={{display:'none'}}>
-    // <div className='modal-content'>
-    //   <div className='modal-header'>
-    //     <span className='modal-title'>{}</span>
-    //     <div className='modal-close'>
-    //       <img src={closeIcon} alt=""/>
-    //     </div>
-    //   </div>
-      // {/* {
-      //   cartState.map(item => 
-      //   <div className='modal-product' key={item.id}>
-      //     <div className='modal-product_img'>
-      //       <img src={require(`../images/${item.img}`)} alt={item.name}/>
-      //     </div>
-      //     <div className='modal-product_info'>
-      //       <span>{item.name}</span>
-      //       <span className='modal-product_price'>$ {item.price}</span>
-      //     </div>
-      //     <div className='modal-amount'>
-      //       <button type='button' value={item.id} onClick={props.addToCart}>+</button>
-      //       <span>{item.quantity}</span>
-      //       <button type='button' value={item.id} onClick={props.removeFromCart}>-</button>
-      //     </div>
-      //   </div>
-      // )} */}
-  //     <div className='modal-footer'>
-  //       <div className='modal-empty-cart' title='Empty cart'>
-  //         {/* empty cart here */}
-  //         <img src={emptyIcon} alt=""/>
-  //       </div>
-  //       <div className='modal-checkout'>
-  //         <span>Checkout</span>
-  //         <span>$ {}</span>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div>
   );
 };
 
-export default connect()(Cart);
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
