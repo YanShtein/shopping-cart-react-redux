@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { addToCart } from "../redux/Shopping/actions";
+import { addToCart, removeFromCart } from "../redux/Shopping/actions";
 import Navbar from './Navbar';
 import emptyIcon from '../svg/trash.svg';
+import { Link } from 'react-router-dom';
 
-const Cart = ({ cart, addToCart }) => {
+const Cart = ({ cart, addToCart, removeFromCart }) => {
   // let total = cartState.map(item => item.price * item.quantity).reduce((a, b) => a + b, 0).toFixed(2);
   // let empty = cartState.length === 0 ? 'Cart is empty...' : 'Shopping Cart';
   
@@ -16,6 +17,7 @@ const Cart = ({ cart, addToCart }) => {
       <div className='cart-body'>
         <div className='cart-content'>
           <div className='cart-header'>Shopping cart</div>
+          <Link to='/'>click</Link>
             {
               cart.map((item) => 
               <div className='cart-product' key={item.id}>
@@ -29,7 +31,7 @@ const Cart = ({ cart, addToCart }) => {
                 <div className='cart-qty'>
                   <button type='button' value={item.id} onClick={() => addToCart(item.id)}>+</button>
                   <span>{item.quantity}</span>
-                  <button type='button' value={item.id} onClick={() => addToCart(item.id)}>-</button>
+                  <button type='button' value={item.id} onClick={() => removeFromCart(item.id)}>-</button>
                 </div>
               </div>
             )}
@@ -55,9 +57,11 @@ const mapStateToProps = (state) => {
   };
 };
 
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (id) => dispatch(addToCart(id))
+    addToCart: (id) => dispatch(addToCart(id)),
+    removeFromCart: (id) => dispatch(removeFromCart(id)),
   };
 };
 

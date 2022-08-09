@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import store from "./redux/store";
 
 import Cart from './components/Cart';
+import Navbar from './components/Navbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

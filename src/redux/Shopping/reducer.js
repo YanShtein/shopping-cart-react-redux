@@ -15,7 +15,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       const inCart = state.cart.find((item) => item.id === action.payload.id ? true : false);
       // spread the state, as objects are reference types and we need to mutate them correctly else we can loose the state etc.
       return {
-        ...state, //spread the state was we dont want to mutate any objects
+        ...state, //spread the state so we dont want to mutate any objects
         cart: inCart // if object is inCart - if its true..than map through the cart and find that item id, spread that item data inside, and add quantity
           ? state.cart.map(item => 
               item.id === action.payload.id
@@ -26,7 +26,24 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           : [...state.cart, {...item, quantity: 1}],
       };
     case actionTypes.REMOVE_FROM_CART:
-      return {};
+      let index = state.cart.findIndex(item => item.id === action.payload.id)
+      if (state.cart[index].quantity === 1) {
+        return {
+          cart: [
+            ...state.cart.slice(0, index),
+            ...state.cart.slice(index + 1)
+          ]
+        };
+      };
+      return {
+        ...state,
+        cart: 
+          state.cart.map(item => 
+            item.id === action.payload.id
+            ? {...item, quantity: item.quantity - 1} 
+            : item
+          )
+      }  
     default:
       return state;
   }
