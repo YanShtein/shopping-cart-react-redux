@@ -15,9 +15,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route exact path='/cart' element={<Cart />} />
       </Routes>
       </BrowserRouter>
     </Provider>

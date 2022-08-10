@@ -13,7 +13,7 @@ const Navbar = ({ cart }) => {
       count += item.quantity;
     });
 
-    setCartCount(count);
+    setCartCount(count)
   }, [cart, cartCount]);
 
   return (

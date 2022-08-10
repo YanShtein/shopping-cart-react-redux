@@ -18,3 +18,8 @@ export const removeFromCart = (itemID) => {
   };
 };
 
+export const emptyCart = () => {
+  return {
+    type: actionTypes.EMPTY_CART,
+  };
+};

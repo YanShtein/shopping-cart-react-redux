@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
-import { addToCart, removeFromCart } from "../redux/Shopping/actions";
+import { addToCart, removeFromCart, emptyCart } from "../redux/Shopping/actions";
 import Navbar from './Navbar';
 import emptyIcon from '../svg/trash.svg';
-import { Link } from 'react-router-dom';
 
-const Cart = ({ cart, addToCart, removeFromCart }) => {
-  // let total = cartState.map(item => item.price * item.quantity).reduce((a, b) => a + b, 0).toFixed(2);
-  // let empty = cartState.length === 0 ? 'Cart is empty...' : 'Shopping Cart';
-  
+const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
+
+  const [checkCount, setCheckCount] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+    })
+
+    setCheckCount(total > 1 ? total.toFixed(2) : total)
+  }, [cart, checkCount]);
+
+
   return (
     <div className='container'>
-      {/* NavBar here istead of Outlet in App and change between cart and app,
-      I want App to render in / with navBar, couldnt solve it for now. */}
-      <Navbar />
       <div className='cart-body'>
         <div className='cart-content'>
           <div className='cart-header'>Shopping cart</div>
-          <Link to='/'>click</Link>
             {
               cart.map((item) => 
               <div className='cart-product' key={item.id}>
@@ -36,13 +41,12 @@ const Cart = ({ cart, addToCart, removeFromCart }) => {
               </div>
             )}
             <div className='cart-footer'>
-            <div className='empty-cart' title='Empty cart'>
-              {/* empty cart here */}
+            <div className='empty-cart' title='Empty cart' onClick={() => emptyCart()}>
               <img src={emptyIcon} alt=""/>
             </div>
             <div className='cart-checkout'>
               <span>Checkout</span>
-              <span>$ {}</span>
+              <span>$ {checkCount}</span>
             </div>
           </div>
         </div>
@@ -62,6 +66,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),
     removeFromCart: (id) => dispatch(removeFromCart(id)),
+    emptyCart: () => dispatch(emptyCart()),
   };
 };
 

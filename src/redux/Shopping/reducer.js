@@ -29,6 +29,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       let index = state.cart.findIndex(item => item.id === action.payload.id)
       if (state.cart[index].quantity === 1) {
         return {
+          ...state,
           cart: [
             ...state.cart.slice(0, index),
             ...state.cart.slice(index + 1)
@@ -43,7 +44,9 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             ? {...item, quantity: item.quantity - 1} 
             : item
           )
-      }  
+      };
+    case actionTypes.EMPTY_CART:
+      return INITIAL_STATE;
     default:
       return state;
   }

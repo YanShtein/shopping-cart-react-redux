@@ -6,6 +6,6 @@
 // in cart -> empty cart
 
 export const SEARCH = "SEARCH";
-export const ITEMS_IN_CART_ICON = "ITEMS_IN_CART_ICON";
+export const EMPTY_CART = "EMPTY_CART";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";

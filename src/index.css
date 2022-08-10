@@ -183,7 +183,7 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 50px;
 }
 
 .empty-cart {
@@ -284,22 +284,22 @@ a {
   .cart-btn {
     margin-right: 10px;
   }
-  .modal-content {
+  .cart-content {
     width: 330px;
     font-size: 12px;
   }
   .search input {
     width: 180px;
   }
-  .modal-product_img {
+  .cart-product_img {
     height: 100%;
     width: 60px;
     margin-right: 16px;
   }
-  .modal-product_info {
+  .cart-product_info {
     width: 100px;
   }
-  .main {
+  .products-main {
     margin-top: 90px;
   }
 }
