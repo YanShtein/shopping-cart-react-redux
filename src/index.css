@@ -20,7 +20,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
+#root {
   padding: 0;
   height: 100%;
   width: 100vw;
@@ -101,7 +101,7 @@ a {
   color: white;
 }
 
-.cart-body {
+.cart-main {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,6 @@ a {
 }
 
 .cart-content {
-  background-color: #f6f7fa8b;
   padding: 20px;
   margin: auto;
   display: flex;
@@ -210,7 +209,8 @@ a {
 .products-main {
   margin-top: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 50px;
 }
@@ -222,6 +222,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1092px;
+  margin-bottom: 50px;
 }
 
 .product {
@@ -276,7 +277,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
   font-size: 14px;
 }
 

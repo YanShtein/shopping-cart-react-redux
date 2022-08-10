@@ -26,6 +26,9 @@ const Products = ({ products, addToCart }) => {
         ))
       }
     </div>
+    <div className='footer'>
+      Designed & Built by Yan Shtein
+    </div>
   </div>  
   );
 };

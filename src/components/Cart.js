@@ -19,8 +19,7 @@ const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
 
 
   return (
-    <div className='container'>
-      <div className='cart-body'>
+      <div className='cart-main'>
         <div className='cart-content'>
           <div className='cart-header'>Shopping cart</div>
             {
@@ -51,7 +50,6 @@ const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
