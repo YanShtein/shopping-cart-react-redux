@@ -2,9 +2,12 @@ import { connect } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import bag from '../svg/bag.svg';
 import { Link } from "react-router-dom";
+import {bindActionCreators} from 'redux';
+import { search } from "../redux/Shopping/actions";
 
 const Navbar = ({ cart }) => {
 
+  const {search, value} = this.props;
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
@@ -12,7 +15,6 @@ const Navbar = ({ cart }) => {
     cart.forEach((item) => {
       count += item.quantity;
     });
-
     setCartCount(count)
   }, [cart, cartCount]);
 
@@ -22,8 +24,7 @@ const Navbar = ({ cart }) => {
         <Link to="/">YouShop</Link>
       </span>
       <div className="search">
-        {/* search here */}
-        <input type="text" placeholder="Type to search... e.g. phone, tablet, pc" maxLength="40"/>
+        <input value={value} onChange={(event) => search(event.target.value)} type="text" placeholder="Type to search... e.g. phone, tablet, pc" maxLength="40"/>
       </div>
       <div className='cart-btn'>
         <div className='itemAdded'><span>{cartCount}</span></div>
@@ -35,10 +36,15 @@ const Navbar = ({ cart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, {filteredData}) => {
   return {
-    cart: state.shop.cart
+    cart: state.shop.cart,
+    value: filteredData.value,
   };
 };
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({search}, dispatch)
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

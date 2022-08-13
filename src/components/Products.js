@@ -3,11 +3,14 @@ import { connect } from "react-redux";
 import { addToCart } from "../redux/Shopping/actions";
 
 const Products = ({ products, addToCart }) => {
+
+  const {filteredData} = this.props;
+
   return (
   <div className='products-main'>
     <div className='products-list'>
       {
-        products.map((item) => (
+        filteredData.map((item) => (
           <div className='product' key={item.id}>
           <div className='product-img'>
             <img src={require(`../images/${item.img}`)} alt={item.name}/>
@@ -33,9 +36,10 @@ const Products = ({ products, addToCart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, {filteredData}) => {
   return {
     products: state.shop.products,
+    filteredData: filteredData.filteredData,
   };
 };
 

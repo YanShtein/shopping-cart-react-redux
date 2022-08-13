@@ -18,6 +18,12 @@ export const removeFromCart = (itemID) => {
   };
 };
 
+export const search = (value) => {
+  return {
+    type: actionTypes.SEARCH, value,
+  };
+};
+
 export const emptyCart = () => {
   return {
     type: actionTypes.EMPTY_CART,

@@ -45,6 +45,12 @@ const shopReducer = (state = INITIAL_STATE, action) => {
             : item
           )
       };
+    case actionTypes.SEARCH:
+      const {value} = action;
+      let filteredData = state.products.filter(item => item.includes(value));
+      return {
+        ...state, value, filteredData
+      };
     case actionTypes.EMPTY_CART:
       return INITIAL_STATE;
     default:
