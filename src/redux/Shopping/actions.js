@@ -1,4 +1,4 @@
-import * as actionTypes from '../Shopping/types';
+import * as actionTypes from './types';
 
 export const addToCart = (itemID) => {
   return {
@@ -18,14 +18,17 @@ export const removeFromCart = (itemID) => {
   };
 };
 
-export const search = (value) => {
-  return {
-    type: actionTypes.SEARCH, value,
-  };
-};
-
 export const emptyCart = () => {
   return {
     type: actionTypes.EMPTY_CART,
+  };
+};
+
+export const Search = (searchVal) => {
+  return {
+    type: actionTypes.SEARCH,
+    payload: {
+      searchVal: searchVal,
+    },
   };
 };

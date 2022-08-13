@@ -2,7 +2,7 @@ import * as actionTypes from '../Shopping/types';
 import { data } from '../../data';
 
 const INITIAL_STATE = {
-  products: data,
+  filteredData: data,
   cart: [],
 }
 
@@ -10,7 +10,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case actionTypes.ADD_TO_CART:
       // get items data from products array
-      const item = state.products.find(prod => prod.id === action.payload.id);
+      const item = data.find(prod => prod.id === action.payload.id);
       // check if item is in cart already
       const inCart = state.cart.find((item) => item.id === action.payload.id ? true : false);
       // spread the state, as objects are reference types and we need to mutate them correctly else we can loose the state etc.
@@ -46,10 +46,20 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           )
       };
     case actionTypes.SEARCH:
-      const {value} = action;
-      let filteredData = state.products.filter(item => item.includes(value));
+      let filteredData = data.filter(item => {
+        if (action.payload.searchVal === '') {
+          return true;
+        } else {
+          return ( 
+            item.name.toLowerCase().includes(action.payload.searchVal) 
+            || 
+            item.category.toLowerCase().includes(action.payload.searchVal)
+          )
+        }
+      });
       return {
-        ...state, value, filteredData
+        ...state,
+        filteredData,
       };
     case actionTypes.EMPTY_CART:
       return INITIAL_STATE;
