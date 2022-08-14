@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import bag from '../svg/bag.svg';
 import { Link } from "react-router-dom";
 import { Search } from "../redux/Shopping/actions";
+import '../css/shared.css';
+import '../css/navbar.css';
 
 const Navbar = (props) => {
 
@@ -17,16 +19,16 @@ const Navbar = (props) => {
   }, [props.cart, cartCount]);
 
   return (
-    <div className='header'>
-      <span className='logo'>
+    <div className='navbar'>
+      <span className='navbar__logo'>
         <Link to="/">YouShop</Link>
       </span>
-      <div className="search"> 
+      <div className="navbar__search"> 
         <input onChange={(e) => props.Search(e.target.value.toLowerCase())} type="text" placeholder="Type to search... e.g. phone, tablet, pc" maxLength="40"/>
       </div>
-      <div className='cart-btn'>
+      <div className='navbar__cart'>
         <Link to="/cart">
-          <div className='itemAdded'><span>{cartCount}</span></div>
+          <div className='navbar__cart-count'><span>{cartCount}</span></div>
             <img src={bag} width="28" height="28" alt=''/>
         </Link>    
       </div>

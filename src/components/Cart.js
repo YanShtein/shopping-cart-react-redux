@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart, emptyCart } from "../redux/Shopping/actions";
-import Navbar from './Navbar';
 import emptyIcon from '../svg/trash.svg';
+import '../css/shared.css';
+import '../css/cart.css';
 
 const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
 
@@ -43,10 +45,12 @@ const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
             <div className='empty-cart' title='Empty cart' onClick={() => emptyCart()}>
               <img src={emptyIcon} alt=""/>
             </div>
-            <div className='cart-checkout'>
-              <span>Checkout</span>
-              <span>$ {checkCount}</span>
-            </div>
+            <Link to='checkout'>
+              <div className='cart-checkout'>
+                <span>Checkout</span>
+                <span>$ {checkCount}</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

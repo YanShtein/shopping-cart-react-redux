@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addToCart } from "../redux/Shopping/actions";
+import '../css/shared.css';
+import '../css/products.css';
 
 const Products = (props) => {
   return (
