@@ -1,10 +1,12 @@
-# React Redux shopping cart
+# <h3>React Redux shopping cart</h3>
 
 <h2><a href="https://yanshtein.github.io/shopping-cart-react-redux/" rel="nofollow">Live Demo</a></h2>
 
 This project uses responsive React-Redux shopping cart app, which consists of a few products and a DB.
 
 <b>Project functionality:</b>
+
+>
 
 - A react-redux Provider holds "store" prop which is used to manage states through all the app components.
 
