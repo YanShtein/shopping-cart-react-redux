@@ -21,7 +21,7 @@ const Navbar = (props) => {
   return (
     <div className='navbar'>
       <span className='navbar__logo'>
-        <Link to="/">YouShop</Link>
+        <Link to="https://yanshtein.github.io/shopping-cart-react-redux/">YouShop</Link>
       </span>
       <div className="navbar__search"> 
         <input onChange={(e) => props.Search(e.target.value.toLowerCase())} type="text" placeholder="Type to search... e.g. phone, tablet, pc" maxLength="40"/>

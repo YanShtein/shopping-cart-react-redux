@@ -19,7 +19,7 @@ root.render(
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path='https://yanshtein.github.io/shopping-cart-react-redux/' element={<Products />} />
+            <Route path='/shopping-cart-react-redux/' element={<Products />} />
             <Route exact path='/cart' element={<Cart />} />
             <Route path='/cart/checkout' element={<Checkout />} />
           </Routes>
