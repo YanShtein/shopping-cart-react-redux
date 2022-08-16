@@ -19,7 +19,6 @@ const Cart = ({ cart, addToCart, removeFromCart, emptyCart }) => {
     setCheckCount(total > 1 ? total.toFixed(2) : total)
   }, [cart, checkCount]);
 
-
   return (
       <div className='cart-main'>
         <div className='cart-content'>

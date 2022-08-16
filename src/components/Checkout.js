@@ -1,14 +1,25 @@
 import { connect } from "react-redux";
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 import '../css/shared.css';
 import '../css/checkout.css';
 
+const Checkout = ({ cart }) => {
 
-const Checkout = ({cart}) => {
+	const [checkCount, setCheckCount] = useState(0);
+
+  useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+    })
+
+    setCheckCount(total > 1 ? total.toFixed(2) : total)
+  }, [cart, checkCount]);
+
+	const disableButton = cart.length === 0;
+
 	return (
 		<div className="checkout-main">
-			<Link to="/cart"> -- Go back to cart</Link>
 			<div className="checkout__cart">
 				<h2>Cart summary:</h2>
 					{
@@ -16,7 +27,6 @@ const Checkout = ({cart}) => {
 							<div className='checkout-product' key={item.id}>
 								<div className='checkout-product_info'>
 									<span className="checkout-product_title">{item.name}</span>
-									<span className='checkout-product_price'> ${item.price}</span>
 									<span className='checkout-product_quantity'>Quantity: {item.quantity}</span>
 								</div>
 							</div>
@@ -66,7 +76,10 @@ const Checkout = ({cart}) => {
 							<input type="text" />
 						</div>
 					</div>
-					<button className="checkout-btn">Check Out</button>
+					<button 
+						disabled={disableButton} 
+						style={disableButton ? {backgroundColor: 'grey', border: 'none', boxShadow: 'none'} : {}} 
+						className="checkout-btn">Pay ${checkCount}</button>
 				</div>
 			</div>
 		</div>
