@@ -2,8 +2,6 @@
 
 <h2><a href="https://yanshtein.github.io/shopping-cart-react-redux/" rel="nofollow">Live Demo</a></h2>
 
-This project uses responsive React-Redux shopping cart app, which consists of a few products and a DB.
-
 <b>Project functionality:</b>
 
 React-redux:
