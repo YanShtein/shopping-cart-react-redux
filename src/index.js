@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 import store from "./redux/store";
@@ -16,14 +16,14 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <div className='container'>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
-            <Route path='/shopping-cart-react-redux/' element={<Products />} />
+            <Route path='/' element={<Products />} />
             <Route exact path='/cart' element={<Cart />} />
             <Route path='/cart/checkout' element={<Checkout />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </div>  
     </Provider>
   </React.StrictMode>
