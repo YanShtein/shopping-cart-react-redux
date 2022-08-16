@@ -27,6 +27,7 @@
 
 .checkout__cart h2 {
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .checkout-product {
@@ -133,5 +134,8 @@
 @media (max-width: 560px) {
 	.checkout-content {
 		flex-direction: column;
+	}
+	.checkout-main {
+		margin-top: 50px;
 	}
 }

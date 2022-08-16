@@ -21,7 +21,7 @@ const Checkout = ({ cart }) => {
 	return (
 		<div className="checkout-main">
 			<div className="checkout__cart">
-				<h2>Cart summary:</h2>
+				<h2>Cart summary</h2>
 					{
 						cart.map((item) =>
 							<div className='checkout-product' key={item.id}>
