@@ -6,9 +6,11 @@ This project uses responsive React-Redux shopping cart app, which consists of a 
 
 <b>Project functionality:</b>
 
-A react-redux Provider holds "store" prop which is used to manage states through all the app components.
+react-redux:
+- Provider holds "store" prop which is used to manage states through all the app components.
 
-Home page has a search functionality which based on search input will show filtered results, else it will show all the products from the DB.
+Home page: 
+- has a search functionality which based on search input will show filtered results, else it will show all the products from the DB.
 
 Each item has an add to cart button, when pressed:
 - the cart quantity will update by 1.
