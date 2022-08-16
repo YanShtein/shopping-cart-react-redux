@@ -11,8 +11,7 @@ react-redux:
 
 Home page: 
 - has a search functionality which based on search input will show filtered results, else it will show all the products from the DB.
-
-Each item has an add to cart button, when pressed:
+- each item has an add to cart button, when pressed:
 - the cart quantity will update by 1.
 - The item will be added to Cart items array.
 
@@ -20,7 +19,9 @@ Cart page holds all items added to cart:
 - Items details (title, price..)
 - Modify each item quantity will trigger addToCart() / removeFromcart() -> and will be updated in cart array.
 - Empty cart button triggers emptyCart() setting cart array to initial state.
-- Checkout page presents items cart summary, and payment details -> if cart is empty the Pay button is disabled, unless it holds at least one item.
+
+Checkout page presents items cart summary, and payment details:
+- if cart is empty the Pay button is disabled, unless it holds at least one item.
 
 - React Router manages routing in all the components.
 
