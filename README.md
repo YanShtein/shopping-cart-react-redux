@@ -9,6 +9,8 @@ This project uses responsive React-Redux shopping cart app, which consists of a 
 React-redux:
 - react Provider holds "store" prop which is used to manage states through all the app components.
 
+React Router manages routing in all the components.
+
 Home page: 
 - has a search functionality which based on search input will show filtered results, else it will show all the products from the DB.
 - each item has an add to cart button, when pressed:
@@ -22,7 +24,5 @@ Cart page - holds all items added to cart:
 
 Checkout page - presents items cart summary, and payment details:
 - if cart is empty the Pay button is disabled, unless it holds at least one item.
-
-React Router manages routing in all the components.
 
 ![Screenshot](youShop.png)
